@@ -29,9 +29,7 @@ pipeline {
     }
     post {
         always {
-            mail to: 'nguyencuong.3061997@gmail.com',
-                 subject: "Failed Pipeline:",
-                 body: "Something is wrong"
+            emailext body: 'A', subject: 'A', to: 'nguyencuong.3061997@gmail.com'
         }
     }
 }
