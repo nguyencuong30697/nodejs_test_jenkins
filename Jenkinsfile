@@ -28,7 +28,7 @@ pipeline {
         }
     }
     post {
-        failure {
+        always {
             mail to: 'nguyencuong.3061997@gmail.com',
                  subject: "Failed Pipeline:",
                  body: "Something is wrong"
