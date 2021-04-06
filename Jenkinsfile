@@ -27,9 +27,9 @@ pipeline {
             }
         }
     }
-    post {
-        always {
-            junit: 'test.xml'
-        }
-    }
+    // post {
+    //     always {
+    //         junit: 'test.xml'
+    //     }
+    // }
 }
