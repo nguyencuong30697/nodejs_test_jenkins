@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Run App stage') {
             steps {
-                sh 'nohup node index.js &'
+                sh 'nohup node index.jsx &'
             }
         }
         stage('Test stage') {
@@ -27,9 +27,13 @@ pipeline {
             }
         }
     }
-    // post {
-    //     always {
-    //         junit: 'test.xml'
-    //     }
-    // }
+    post {
+        post {
+            failure {
+                mail to: 'nguyencuong.3061997@gmail.com',
+                    subject: "Failed Pipeline:",
+                    body: "Something is wrong"
+            }
+        }
+    }
 }
