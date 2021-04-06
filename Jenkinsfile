@@ -29,7 +29,7 @@ pipeline {
     }
     post {
         always {
-            emailext body: 'A', subject: 'A', to: 'nguyencuong.3061997@gmail.com'
+            emailext body: 'Built Success', subject: 'Notification Built', to: 'nguyencuong.3061997@gmail.com'
         }
     }
 }
