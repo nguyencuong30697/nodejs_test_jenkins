@@ -26,13 +26,3 @@ describe("A", function () {
     expect(4).to.equal(5);
   });
 });
-
-describe("GET /", function () {
-  it("returns Hello World", async function () {
-    expect(2).to.equal(2);
-    const response = await request.get("/");
-
-    expect(response.status).to.eql(200);
-    // expect(response.res.text).to.eql("Hello World");
-  });
-});
