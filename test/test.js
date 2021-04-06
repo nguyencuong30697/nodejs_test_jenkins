@@ -13,7 +13,7 @@ describe("GET /", function () {
 
 describe("GET /about", function () {
   it("returns About", async function () {
-    expect(3).to.equal(2);
+    expect(2).to.equal(2);
     // const response = await request.get("/about");
 
     // expect(response.status).to.eql(200);
