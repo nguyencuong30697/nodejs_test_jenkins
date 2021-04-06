@@ -21,11 +21,11 @@ pipeline {
                 sh 'nohup node index.jsx &'
             }
         }
-        // stage('Test stage') {
-        //     steps {
-        //         sh 'npm test'
-        //     }
-        // }
+        stage('Test stage') {
+            steps {
+                sh 'npm test'
+            }
+        }
     }
     post {
         always {
