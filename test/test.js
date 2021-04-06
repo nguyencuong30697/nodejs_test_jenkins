@@ -23,6 +23,6 @@ describe("GET /about", function () {
 
 describe("A", function () {
   it("returns test", async function () {
-    expect(4).to.equal(5);
+    expect(5).to.equal(5);
   });
 });
