@@ -26,11 +26,30 @@ pipeline {
                 sh 'npm test'
             }
         }
+        stage('Build stage') {
+            steps{
+                script {
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                }
+            }
+        }
+        stage('Push Image stage') {
+            steps {
+                script {
+                    docker.withRegistry( '', registryCredential ) {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
     }
     post {
         always {
             junit 'test.xml'
             emailext body: '${DEFAULT_CONTENT}', subject: '${DEFAULT_SUBJECT}', to: 'nguyencuong.3061997@gmail.com'
+        }
+        success {
+            echo 'I succeeded!'
         }
     }
 }
