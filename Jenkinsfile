@@ -21,11 +21,11 @@ pipeline {
                 sh 'nohup node index.jsx &'
             }
         }
-        // stage('Test stage') {
-        //     steps {
-        //         sh 'npm test'
-        //     }
-        // }
+        stage('Test stage') {
+            steps {
+                sh 'npm test'
+            }
+        }
         // stage('Build stage') {
         //     steps{
         //         script {
@@ -43,13 +43,10 @@ pipeline {
         //     }
         // }
     }
-    // post {
-    //     always {
-    //         junit 'test.xml'
-    //         emailext body: '${DEFAULT_CONTENT}', subject: '${DEFAULT_SUBJECT}', to: 'nguyencuong.3061997@gmail.com'
-    //     }
-    //     success {
-    //         echo 'I succeeded!'
-    //     }
-    // }
+    post {
+        always {
+            junit 'test.xml'
+            emailext body: '${DEFAULT_CONTENT}', subject: '${DEFAULT_SUBJECT}', to: 'nguyencuong.3061997@gmail.com'
+        }
+    }
 }
