@@ -14,9 +14,22 @@ pipeline {
         stage('Install Lib stage') {
             steps {
                 sh 'npm install'
+            }
+        }
+        stage('Run App stage') {
+            steps {
                 sh 'nohup node index.js &'
+            }
+        }
+        stage('Test stage') {
+            steps {
                 sh 'npm test'
             }
+        }
+    }
+    post {
+        always {
+            junit: 'test.xml'
         }
     }
 }
