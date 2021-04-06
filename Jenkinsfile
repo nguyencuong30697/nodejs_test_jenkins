@@ -28,12 +28,10 @@ pipeline {
         }
     }
     post {
-        post {
-            failure {
-                mail to: 'nguyencuong.3061997@gmail.com',
-                    subject: "Failed Pipeline:",
-                    body: "Something is wrong"
-            }
+        failure {
+            mail to: 'nguyencuong.3061997@gmail.com',
+                 subject: "Failed Pipeline:",
+                 body: "Something is wrong"
         }
     }
 }
