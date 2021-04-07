@@ -46,7 +46,7 @@ pipeline {
     post {
         always {
             junit 'test.xml'
-            emailext body: '${DEFAULT_CONTENT}', subject: '${DEFAULT_SUBJECT}', to: 'nguyencuong.3061997@gmail.com'
+            emailext body: '${DEFAULT_CONTENT}', subject: '${DEFAULT_SUBJECT}', to: 'nguyencuong.3061997@gmail.com, tuananh091299@gmail'
         }
     }
 }
